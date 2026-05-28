@@ -1,9 +1,12 @@
 name: Sincronización Automática CoPA Dashboard
 
 on:
+  push:
+    branches:
+      - main # Se dispara INSTANTÁNEAMENTE cuando subís cambios a la rama principal
   schedule:
-    - cron: '0 * * * *' # Se ejecuta de forma automática cada 1 hora en punto
-  workflow_dispatch: # Te habilita un botón en GitHub para ejecutarlo manualmente cuando quieras
+    - cron: '0 * * * *' # Sigue funcionando de forma automática cada 1 hora en punto
+  workflow_dispatch: # Mantiene el botón manual por si acaso
 
 permissions:
   contents: write
