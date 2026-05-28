@@ -1,1 +1,56 @@
+name: Sincronización Automática CoPA Dashboard
 
+on:
+  schedule:
+    - cron: '0 * * * *' # Se ejecuta de forma automática cada 1 hora en punto
+  workflow_dispatch: # Te habilita un botón en GitHub para ejecutarlo manualmente cuando quieras
+
+# Permisos de seguridad requeridos para que el robot interactúe con tu repositorio y Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  refresh-data-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 1. Clonar el repositorio en el servidor virtual
+      uses: actions/checkout@v4
+
+    - name: 2. Configurar el entorno de Python (v3.13)
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+
+    - name: 3. Instalar librerías de conexión de Google
+      run: |
+        python -m pip install --upgrade pip
+        pip install gspread google-auth
+
+    - name: 4. Ejecutar script de sincronización de métricas
+      env:
+        # Vincula el Secret encriptado de GitHub con el entorno de ejecución de Python
+        GOOGLE_CREDENTIALS_ENV: ${{ secrets.GOOGLE_CREDENTIALS }}
+      run: python scripts/sync_metrics.py
+
+    - name: 5. Guardar cambios del JSON en el repositorio (Respaldo histórico)
+      run: |
+        git config --global user.name "CoPA AutoSync Bot"
+        git config --global user.email "actions@github.com"
+        git add src/data/metrics.json
+        # Comprueba si hay cambios en los datos. Si los hay, hace el commit y push.
+        git diff-index --quiet HEAD || (git commit -m "AutoSync: Actualización de datos desde Google Sheet" && git push origin main)
+      continue-on-error: true
+
+    - name: 6. Inicializar entorno de despliegue para GitHub Pages
+      uses: actions/configure-pages@v4
+
+    - name: 7. Empaquetar SOLAMENTE la carpeta SRC (El truco de la raíz)
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: 'src/' # Al indicarle esto, index.html pasa a ser la raíz del sitio web
+
+    - name: 8. Publicar el Dashboard en internet
+      id: deployment
+      uses: actions/deploy-pages@v4
