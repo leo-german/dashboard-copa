@@ -1,133 +1,324 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard CoPA - Colegio de Profesionales de la Agrimensura</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Métricas - CoPA</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="navbar-inner">
-      <div class="navbar-brand">
-        <img src="assets/logo.png" alt="CoPA Logo" class="logo">
-        <div>
-          <h1 class="brand-title">Colegio de Profesionales de la Agrimensura</h1>
-          <span class="brand-subtitle">Provincia de Santa Fe &mdash; Distrito Norte</span>
+    <!-- Top Header Banner -->
+    <header class="main-header">
+        <div class="header-container">
+            <h1 class="header-title">COLEGIO DE PROFESIONALES DE LA AGRIMENSURA</h1>
+            <p class="header-subtitle">Dashboard de Métricas Financieras y Operativas</p>
         </div>
-      </div>
-      <span class="badge-dashboard">Dashboard de Métricas</span>
-    </div>
-  </header>
+    </header>
 
-  <main class="container">
-    <section class="filters-bar">
-      <div class="filter-group">
-        <label for="filterPeriodo">Período General</label>
-        <select id="filterPeriodo"></select>
-      </div>
-      <div class="filter-group">
-        <label for="filterAnio">Año</label>
-        <select id="filterAnio"></select>
-      </div>
-    </section>
+    <main class="dashboard-container">
+        <!-- Control Filters Bar -->
+        <section class="filters-section card">
+            <h2 class="section-subtitle">Controles del Dashboard</h2>
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label for="filter-general">Filtro General (Base de datos, Expedientes y VEP_SCIT):</label>
+                    <select id="filter-general" class="custom-select">
+                        <!-- Cargado dinámicamente por JS -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-financial">Filtro Capital Financiero:</label>
+                    <select id="filter-financial" class="custom-select">
+                        <!-- Cargado dinámicamente por JS -->
+                    </select>
+                </div>
+            </div>
+        </section>
 
-    <section class="kpi-grid" id="kpiGrid">
-      <div class="kpi-card" id="kpiIngresos">
-        <div class="kpi-label">Ingresos Totales</div>
-        <div class="kpi-value" id="kpiIngresosValor">$ --</div>
-        <div class="kpi-delta" id="kpiIngresosDelta"><span class="delta-icon"></span> --</div>
-      </div>
-      <div class="kpi-card" id="kpiEgresos">
-        <div class="kpi-label">Egresos Totales</div>
-        <div class="kpi-value" id="kpiEgresosValor">$ --</div>
-        <div class="kpi-delta" id="kpiEgresosDelta"><span class="delta-icon"></span> --</div>
-      </div>
-      <div class="kpi-card" id="kpiEgresosOp">
-        <div class="kpi-label">Egresos Operativos</div>
-        <div class="kpi-value" id="kpiEgresosOpValor">$ --</div>
-        <div class="kpi-delta" id="kpiEgresosOpDelta"><span class="delta-icon"></span> --</div>
-      </div>
-      <div class="kpi-card" id="kpiEgresosExt">
-        <div class="kpi-label">Egresos Extraordinarios</div>
-        <div class="kpi-value" id="kpiEgresosExtValor">$ --</div>
-        <div class="kpi-delta" id="kpiEgresosExtDelta"><span class="delta-icon"></span> --</div>
-      </div>
-    </section>
+        <!-- Seccion 1: Resumen y Base de Datos (Ingresos y Egresos) -->
+        <section class="dashboard-section">
+            <div class="section-banner">
+                <h2>Resumen General de Ingresos y Egresos</h2>
+            </div>
+            
+            <!-- KPI Cards Grid -->
+            <div class="kpi-grid">
+                <!-- Card Total Ingresos -->
+                <div class="kpi-card card">
+                    <div class="kpi-label">Ingresos Totales</div>
+                    <div id="kpi-ingresos-total" class="kpi-value">$0.00</div>
+                    <div id="kpi-ingresos-delta" class="kpi-delta">
+                        <span class="delta-arrow">↑</span> <span class="delta-pct">0.0%</span> vs mes anterior
+                    </div>
+                    <div class="kpi-subdetails">
+                        <span>Op: <strong id="kpi-ingresos-op">$0</strong></span> | 
+                        <span>Ext: <strong id="kpi-ingresos-ext">$0</strong></span>
+                    </div>
+                </div>
 
-    <section class="chart-grid">
-      <div class="chart-card chart-card-full">
-        <h2 class="chart-title">Ingresos vs Egresos</h2>
-        <canvas id="chartIngresosEgresos"></canvas>
-      </div>
-      <div class="chart-card">
-        <h2 class="chart-title">Expedientes por Tipo</h2>
-        <canvas id="chartExpedientes"></canvas>
-      </div>
-      <div class="chart-card">
-        <h2 class="chart-title">Estado de Expedientes</h2>
-        <canvas id="chartExpedientesEstado"></canvas>
-      </div>
-      <div class="chart-card chart-card-full">
-        <h2 class="chart-title">Rendición VEP / SCIT</h2>
-        <div class="chart-legend-note">Ingresos (verde) · Egresos (rojo)</div>
-        <canvas id="chartVepScit"></canvas>
-      </div>
-      <div class="chart-card chart-card-full">
-        <div class="chart-header-flex">
-          <h2 class="chart-title">Desglose por Categorías</h2>
-          <div class="chart-toggle-group">
-            <button class="toggle-btn active" data-cat="Ingresos">Ingresos</button>
-            <button class="toggle-btn" data-cat="Egresos">Egresos</button>
-          </div>
-        </div>
-        <canvas id="chartCategorias"></canvas>
-      </div>
-    </section>
+                <!-- Card Total Egresos -->
+                <div class="kpi-card card">
+                    <div class="kpi-label">Egresos Totales</div>
+                    <div id="kpi-egresos-total" class="kpi-value">$0.00</div>
+                    <div id="kpi-egresos-delta" class="kpi-delta">
+                        <span class="delta-arrow">↓</span> <span class="delta-pct">0.0%</span> vs mes anterior
+                    </div>
+                    <div class="kpi-subdetails">
+                        <span>Op: <strong id="kpi-egresos-op">$0</strong></span> | 
+                        <span>Ext: <strong id="kpi-egresos-ext">$0</strong></span>
+                    </div>
+                </div>
 
-    <section class="section-divider">
-      <h2 class="section-title">Capital Financiero de la Entidad</h2>
-    </section>
+                <!-- Card Balance Neto -->
+                <div class="kpi-card card">
+                    <div class="kpi-label">Balance Neto del Período</div>
+                    <div id="kpi-balance-total" class="kpi-value">$0.00</div>
+                    <div id="kpi-balance-delta" class="kpi-delta">
+                        <span class="delta-arrow">↑</span> <span class="delta-pct">0.0%</span> vs mes anterior
+                    </div>
+                    <div class="kpi-subdetails">
+                        <span id="kpi-balance-type">Superávit</span>
+                    </div>
+                </div>
+            </div>
 
-    <section class="filters-bar filters-bar--capital">
-      <div class="filter-group">
-        <label for="filterCapitalPeriodo">Período Capital</label>
-        <select id="filterCapitalPeriodo"></select>
-      </div>
-      <div class="filter-group">
-        <label for="filterCapitalAnio">Año</label>
-        <select id="filterCapitalAnio"></select>
-      </div>
-      <div class="filter-group">
-        <label>Moneda</label>
-        <div class="currency-toggle">
-          <button class="toggle-btn active" data-currency="ARS">ARS $</button>
-          <button class="toggle-btn" data-currency="USD">USD $</button>
-        </div>
-      </div>
-    </section>
+            <!-- Gráficos de Ingresos y Egresos -->
+            <div class="charts-grid-2">
+                <div class="chart-card card">
+                    <h3 class="chart-title">Comparación de Ingresos vs Egresos</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-ingresos-egresos"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card card">
+                    <h3 class="chart-title">Desglose por Categorías</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-categorias-base"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="chart-grid">
-      <div class="chart-card">
-        <h2 class="chart-title">Distribución del Capital</h2>
-        <canvas id="chartCapitalDist"></canvas>
-      </div>
-      <div class="chart-card">
-        <h2 class="chart-title">Crecimiento vs Intereses</h2>
-        <canvas id="chartCapitalCrecimiento"></canvas>
-      </div>
-    </section>
-  </main>
+        <!-- Seccion 2: Expedientes -->
+        <section class="dashboard-section">
+            <div class="section-banner">
+                <h2>Control de Expedientes Ingresados</h2>
+            </div>
+            
+            <div class="kpi-grid kpi-grid-4">
+                <div class="kpi-card card">
+                    <div class="kpi-label">Total Expedientes</div>
+                    <div id="kpi-exp-total" class="kpi-value">0</div>
+                    <div id="kpi-exp-delta" class="kpi-delta">
+                        <span class="delta-arrow">↑</span> <span class="delta-pct">0.0%</span> vs mes ant.
+                    </div>
+                </div>
+                <div class="kpi-card card">
+                    <div class="kpi-label">Expedientes Comunes</div>
+                    <div id="kpi-exp-comunes" class="kpi-value">0</div>
+                    <div id="kpi-exp-comunes-pct" class="kpi-subtext">0% del total</div>
+                </div>
+                <div class="kpi-card card">
+                    <div class="kpi-label">Expedientes CCU</div>
+                    <div id="kpi-exp-ccu" class="kpi-value">0</div>
+                    <div id="kpi-exp-ccu-pct" class="kpi-subtext">0% del total</div>
+                </div>
+                <div class="kpi-card card">
+                    <div class="kpi-label">Expedientes VEP</div>
+                    <div id="kpi-exp-vep" class="kpi-value">0</div>
+                    <div id="kpi-exp-vep-pct" class="kpi-subtext">0% del total</div>
+                </div>
+            </div>
 
-  <footer class="footer">
-    <p>CoPA &mdash; Colegio de Profesionales de la Agrimensura de la Provincia de Santa Fe &mdash; Distrito Norte</p>
-    <p class="footer-small">Datos actualizados automáticamente desde Google Sheets</p>
-  </footer>
+            <div class="charts-grid-1">
+                <div class="chart-card card">
+                    <h3 class="chart-title">Distribución e Ingreso de Expedientes por Tipo</h3>
+                    <div class="chart-container-large">
+                        <canvas id="chart-expedientes"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <script src="app.js"></script>
+        <!-- Seccion 3: Rendición VEP_SCIT -->
+        <section class="dashboard-section">
+            <div class="section-banner">
+                <h2>Rendición VEP_SCIT</h2>
+            </div>
+            
+            <div class="kpi-grid">
+                <div class="kpi-card card">
+                    <div class="kpi-label">Ingresos VEP_SCIT</div>
+                    <div id="kpi-vep-ingresos" class="kpi-value">$0.00</div>
+                    <div id="kpi-vep-ingresos-delta" class="kpi-delta">
+                        <span class="delta-arrow">↑</span> <span class="delta-pct">0.0%</span> vs mes ant.
+                    </div>
+                </div>
+                <div class="kpi-card card">
+                    <div class="kpi-label">Gastos VEP_SCIT</div>
+                    <div id="kpi-vep-gastos" class="kpi-value">$0.00</div>
+                    <div id="kpi-vep-gastos-delta" class="kpi-delta">
+                        <span class="delta-arrow">↑</span> <span class="delta-pct">0.0%</span> vs mes ant.
+                    </div>
+                </div>
+                <div class="kpi-card card">
+                    <div class="kpi-label">Resultado Neto VEP_SCIT</div>
+                    <div id="kpi-vep-balance" class="kpi-value">$0.00</div>
+                    <div class="kpi-subdetails">
+                        <span id="kpi-vep-type">Balance positivo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid-2">
+                <div class="chart-card card">
+                    <h3 class="chart-title">Comparación Rendición VEP_SCIT</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-vep-rendicion"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card card">
+                    <h3 class="chart-title">Evolución Histórica VEP_SCIT</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-vep-historico"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion 4: Capital Financiero -->
+        <section class="dashboard-section">
+            <div class="section-banner">
+                <h2>Capital Financiero de la Entidad</h2>
+            </div>
+            
+            <div class="kpi-grid">
+                <div class="kpi-card card">
+                    <div class="kpi-label">Capital Total Administrado</div>
+                    <div id="kpi-cap-total" class="kpi-value">$0.00</div>
+                    <div class="kpi-subdetails">
+                        <span>Moneda: <strong id="kpi-cap-moneda">ARS</strong></span>
+                    </div>
+                </div>
+                <div class="kpi-card card">
+                    <div class="kpi-label">Intereses Totales a Generar</div>
+                    <div id="kpi-cap-interes" class="kpi-value">$0.00</div>
+                    <div class="kpi-subdetails">
+                        <span>Rendimiento Estimado</span>
+                    </div>
+                </div>
+                <div class="kpi-card card">
+                    <div class="kpi-label">Tasa Nominal Anual (TNA) Promedio</div>
+                    <div id="kpi-cap-tna" class="kpi-value">0.00%</div>
+                    <div class="kpi-subdetails">
+                        <span>Ponderado por Capital</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid-2">
+                <div class="chart-card card">
+                    <h3 class="chart-title">Distribución de Cartera</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-cap-distribucion"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card card">
+                    <h3 class="chart-title">Crecimiento de Capital vs Intereses por Entidad</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-cap-evolucion"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion 5: Tablas de Detalles -->
+        <section class="dashboard-section">
+            <div class="section-banner">
+                <h2>Registros de Movimientos Detallados</h2>
+            </div>
+            <div class="card detail-tables-card">
+                <div class="tabs-header">
+                    <button class="tab-btn active" onclick="switchTab('tab-base')">Base de Datos</button>
+                    <button class="tab-btn" onclick="switchTab('tab-vep')">VEP_SCIT</button>
+                    <button class="tab-btn" onclick="switchTab('tab-cap')">Capital Financiero</button>
+                </div>
+                
+                <div id="tab-base" class="tab-content active">
+                    <div class="table-responsive">
+                        <table class="sobria-table">
+                            <thead>
+                                <tr>
+                                    <th>Período</th>
+                                    <th>Tipo</th>
+                                    <th>Subtipo</th>
+                                    <th>Categoría</th>
+                                    <th>Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-base-body">
+                                <!-- JS inserta filas -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="tab-vep" class="tab-content">
+                    <div class="table-responsive">
+                        <table class="sobria-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Tipo</th>
+                                    <th>Concepto</th>
+                                    <th>Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-vep-body">
+                                <!-- JS inserta filas -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="tab-cap" class="tab-content">
+                    <div class="table-responsive">
+                        <table class="sobria-table">
+                            <thead>
+                                <tr>
+                                    <th>Tipo Activo</th>
+                                    <th>Fecha Const.</th>
+                                    <th>Fecha Venc.</th>
+                                    <th>Capital</th>
+                                    <th>Interés</th>
+                                    <th>Monto Final</th>
+                                    <th>TNA</th>
+                                    <th>Plazo (Días)</th>
+                                    <th>Entidad</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-cap-body">
+                                <!-- JS inserta filas -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Colegio de Profesionales de la Agrimensura. Todos los derechos reservados.</p>
+        <p class="footer-update">Última sincronización de datos: <span id="sync-timestamp">-</span></p>
+    </footer>
+
+    <script src="data/metrics.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
