@@ -6712,6 +6712,279 @@
       "subtipo": "Extraordinario",
       "categoria": "Pagos Registro de la Propiedad",
       "monto": 7134100.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "Matrícula",
+      "monto": 7126116.35
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "Honorarios Variables",
+      "monto": 37144857.7
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "Honorarios Asociación",
+      "monto": 302.12
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "Aporte FADA",
+      "monto": 1867800.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "Fondo Contingencia",
+      "monto": -186129.58
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "VEP",
+      "monto": 23596200.64
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "VEP Catastro (5%)",
+      "monto": 12280722.83
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "CCU",
+      "monto": 9645373.82
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Ingreso",
+      "subtipo": "Extraordinario",
+      "categoria": "Cobros Registro de la Propiedad",
+      "monto": 6980700.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Movilidad y Viaticos",
+      "monto": 10400.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Cadeteria y Fletes",
+      "monto": 262800.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Viáticos Asistencias a Reuniones en Colegio",
+      "monto": 1955983.39
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Congresos/ Charlas/Talleres (dentro y fuera de Sta. Fe)",
+      "monto": 1617407.6
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Gastos Asistencia Directores a reuniones",
+      "monto": 4398809.62
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Varios",
+      "monto": 256100.51
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Reparaciones y repuestos",
+      "monto": 268644.08
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Fada",
+      "monto": 411400.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Seguridad y Vigilancia",
+      "monto": 37230.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Electricidad",
+      "monto": 300406.97
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Agua y Gas",
+      "monto": 139177.83
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Leyes Sociales y gtos. del personal",
+      "monto": 16576583.91
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Honorarios",
+      "monto": 11855023.85
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Limpieza",
+      "monto": 1250268.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Publicidad (Avisos Colegio)",
+      "monto": 2388465.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Telefono e Internet",
+      "monto": 129360.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Sueldos y Anticipos al personal (incluye SAC)",
+      "monto": 36628004.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Beneficios al personal (OSDE y uniformes)",
+      "monto": 462727.78
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Comisiones y gastos bancarias",
+      "monto": 1264925.98
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Imp. Ley 25413 (bancario)",
+      "monto": 506426.7
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Seguros de Vida y Accidentes del Personal/Seguros",
+      "monto": 769009.61
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Seguros s/ Inmuebles",
+      "monto": 138727.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Donaciones",
+      "monto": 40000.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Pago FADA Aportes sobre Expedientes (GEO)",
+      "monto": 663200.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Gastos VEP Catastro (sueldos personal y factura ImageDATA)",
+      "monto": 14708260.62
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Impuestos, Tasas y Servicios",
+      "monto": 87015.54
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Extraordinario",
+      "categoria": "Regalos institucionales",
+      "monto": 3834500.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Extraordinario",
+      "categoria": "Inversión Plazo Fijo",
+      "monto": -18954551.37
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Extraordinario",
+      "categoria": "Honorarios Convenio MIT Pagados",
+      "monto": 990000.0
+    },
+    {
+      "periodo": "2026-06-01",
+      "tipo": "Egreso",
+      "subtipo": "Extraordinario",
+      "categoria": "Pagos Registro de la Propiedad",
+      "monto": 7001700.0
     }
   ],
   "expedientes": [
@@ -8009,6 +8282,13 @@
       "ccu": 78,
       "vep": 495,
       "total": 829
+    },
+    {
+      "fecha": "2026-06-01",
+      "comunes": 252,
+      "ccu": 68,
+      "vep": 523,
+      "total": 843
     }
   ],
   "rendicion_vep_scit": [
@@ -8923,6 +9203,18 @@
       "tipo": "Gasto",
       "concepto": "Sueldos 5 empleados contratados (Varoli/Menéndez/Stepanski/García/Borgnino)",
       "monto": 9813679.76
+    },
+    {
+      "fecha": "2026-06-01",
+      "tipo": "Ingreso",
+      "concepto": "VEP 523 exptes.",
+      "monto": 12280422.8
+    },
+    {
+      "fecha": "2026-06-01",
+      "tipo": "Gasto",
+      "concepto": "Sueldos 5 empleados contratados (Varoli/Menéndez/Stepanski/García/Borgnino)",
+      "monto": 14708260.62
     }
   ],
   "capital_financiero": [
@@ -10281,7 +10573,115 @@
       "tna": 21.75,
       "plazo": 30,
       "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Liquidez",
+      "fecha_constitucion": "2026-07-02",
+      "fecha_vencimiento": "2026-07-23",
+      "moneda": "ARS",
+      "capital": 29908481.0,
+      "interes": 0.0,
+      "monto_final": 29908481.0,
+      "tna": 0.0,
+      "plazo": 0,
+      "entidad": "Banco Santa Fe"
+    },
+    {
+      "tipo_activo": "Liquidez",
+      "fecha_constitucion": "2026-07-03",
+      "fecha_vencimiento": "2026-07-24",
+      "moneda": "ARS",
+      "capital": 88009.0,
+      "interes": 0.0,
+      "monto_final": 88009.0,
+      "tna": 0.0,
+      "plazo": 0,
+      "entidad": "Banco Macro"
+    },
+    {
+      "tipo_activo": "Liquidez",
+      "fecha_constitucion": "2026-07-04",
+      "fecha_vencimiento": "2026-07-25",
+      "moneda": "ARS",
+      "capital": 719309.0,
+      "interes": 0.0,
+      "monto_final": 719309.0,
+      "tna": 0.0,
+      "plazo": 0,
+      "entidad": "Caja chica"
+    },
+    {
+      "tipo_activo": "FCI",
+      "fecha_constitucion": "2026-07-05",
+      "fecha_vencimiento": "2026-07-26",
+      "moneda": "USD",
+      "capital": 85192.64,
+      "interes": 0.0,
+      "monto_final": 85192.64,
+      "tna": 0.0,
+      "plazo": 0,
+      "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Plazo fijo",
+      "fecha_constitucion": "2026-07-06",
+      "fecha_vencimiento": "2026-07-27",
+      "moneda": "ARS",
+      "capital": 25000000.0,
+      "interes": 503424.0,
+      "monto_final": 25503424.0,
+      "tna": 21.0,
+      "plazo": 30,
+      "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Plazo fijo",
+      "fecha_constitucion": "2026-07-07",
+      "fecha_vencimiento": "2026-07-28",
+      "moneda": "ARS",
+      "capital": 36600000.0,
+      "interes": 728239.0,
+      "monto_final": 37328239.0,
+      "tna": 20.75,
+      "plazo": 30,
+      "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Plazo fijo",
+      "fecha_constitucion": "2026-07-08",
+      "fecha_vencimiento": "2026-07-29",
+      "moneda": "ARS",
+      "capital": 40900000.0,
+      "interes": 853017.0,
+      "monto_final": 41753017.0,
+      "tna": 21.75,
+      "plazo": 30,
+      "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Plazo fijo",
+      "fecha_constitucion": "2026-07-09",
+      "fecha_vencimiento": "2026-07-30",
+      "moneda": "ARS",
+      "capital": 117100000.0,
+      "interes": 2358041.0,
+      "monto_final": 119458041.0,
+      "tna": 21.0,
+      "plazo": 30,
+      "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Plazo fijo",
+      "fecha_constitucion": "2026-07-10",
+      "fecha_vencimiento": "2026-07-31",
+      "moneda": "ARS",
+      "capital": 8200000.0,
+      "interes": 165123.0,
+      "monto_final": 8365123.0,
+      "tna": 21.0,
+      "plazo": 30,
+      "entidad": "Macro"
     }
   ],
-  "last_updated": "2026-08-04T13:31:42Z"
+  "last_updated": "2026-08-04T13:51:36Z"
 }
