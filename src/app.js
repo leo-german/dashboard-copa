@@ -175,31 +175,6 @@ function initFilters() {
         option.textContent = formatMonthYear(ym);
         selectFinancial.appendChild(option);
     });
-
-    // 3. Obtener años únicos para el Filtro Histórico Anual
-    const historicalYears = new Set();
-    if (rawData.base_de_datos) {
-        rawData.base_de_datos.forEach(item => {
-            if (item.periodo) historicalYears.add(item.periodo.substring(0, 4));
-        });
-    }
-    
-    const sortedYears = Array.from(historicalYears).sort().reverse();
-    
-    if (selectYearHistorical) {
-        selectYearHistorical.innerHTML = '';
-        sortedYears.forEach(yr => {
-            const option = document.createElement('option');
-            option.value = yr;
-            option.textContent = yr;
-            selectYearHistorical.appendChild(option);
-        });
-        
-        if (sortedYears.length > 0) {
-            selectYearHistorical.value = sortedYears[0];
-        }
-    }
-}
     
     // Seleccionar por defecto el último mes registrado (Capital Financiero)
     // El análisis mostró que el último mes de capital_financiero es Mayo 2026 (2026-05)
