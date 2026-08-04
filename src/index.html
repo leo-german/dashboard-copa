@@ -269,6 +269,43 @@
             </div>
         </section>
 
+        <!-- Seccion Nueva: Análisis Historico Anual -->
+    <section class="dashboard-section">
+    <div class="section-banner">
+        <h2>Análisis Histórico Comparativo Anual</h2>
+    </div>
+
+    <!-- Filtro de Año local para esta sección -->
+    <div class="card section-filters-bar" style="background-color: #FAFAFA; margin-bottom: 20px; padding: 15px 20px;">
+        <div class="filters-grid" style="grid-template-columns: 1fr;">
+            <div class="filter-group">
+                <label for="filter-year-historical">Seleccionar Año de Análisis:</label>
+                <select id="filter-year-historical" class="custom-select">
+                    <!-- Cargado dinámicamente por JS -->
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="charts-grid-2">
+        <!-- Gráfico 1: Rendimiento / Diferencia Porcentual Mensual -->
+        <div class="chart-card card">
+            <h3 class="chart-title">Diferencia Porcentual Operativa Mensual (%)</h3>
+            <div class="chart-container">
+                <canvas id="chart-historico-rendimiento"></canvas>
+            </div>
+        </div>
+        
+        <!-- Gráfico 2: Expedientes del Año -->
+        <div class="chart-card card">
+            <h3 class="chart-title">Expedientes Ingresados en el Año</h3>
+            <div class="chart-container">
+                <canvas id="chart-historico-expedientes"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+        
         <!-- Seccion 5: Tablas de Detalles -->
         <section class="dashboard-section">
             <div class="section-banner">
