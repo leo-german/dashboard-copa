@@ -16,6 +16,7 @@ const selectFinancial = document.getElementById('filter-financial');
 const selectCurrency = document.getElementById('filter-currency');
 const selectCategoryType = document.getElementById('filter-category-type');
 const syncTimestampEl = document.getElementById('sync-timestamp');
+const selectYearHistorical = document.getElementById('filter-year-historical');
 
 // Helper para convertir "YYYY-MM-DD" o "YYYY-MM" en "Mes AAAA"
 function formatMonthYear(ymString) {
@@ -101,10 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Listeners para los filtros
     selectGeneral.addEventListener('change', updateDashboard);
     selectFinancial.addEventListener('change', updateFinancialSection);
-    if (selectCurrency) {
+       if (selectYearHistorical) {
+        selectYearHistorical.addEventListener('change', updateHistoricalSection);
+    }
+
+        if (selectCurrency) {
         selectCurrency.addEventListener('change', updateFinancialSection);
     }
-    if (selectCategoryType) {
+        if (selectCategoryType) {
         selectCategoryType.addEventListener('change', () => {
             const selectedGeneral = selectGeneral.value;
             updateBaseDeDatosSection(selectedGeneral);
@@ -205,6 +210,7 @@ function updateDashboard() {
     updateExpedientesSection(selectedGeneral);
     updateVepSection(selectedGeneral);
     updateFinancialSection(); // Se llama independiente porque lee su propio selector
+    updateHistoricalSection();
 }
 
 // ----------------------------------------------------
@@ -945,4 +951,143 @@ function renderDelta(elementId, current, previous, positiveIsGood = true) {
         el.className = `kpi-delta ${goodClass}`;
         el.innerHTML = `<span class="delta-arrow">${arrow}</span> <span class="delta-pct">${sign}${pct.toFixed(1)}%</span> vs mes anterior`;
     }
+}
+
+// ----------------------------------------------------
+// SECCIÓN NUEVA: ANÁLISIS HISTÓRICO ANUAL
+// ----------------------------------------------------
+function updateHistoricalSection() {
+    const selectedYear = selectYearHistorical.value;
+    if (!rawData || !selectedYear) return;
+
+    // Array de los 12 meses para el año seleccionado (ej: "2025-01", "2025-02", ...)
+    const monthsInYear = Array.from({ length: 12 }, (_, i) => {
+        const m = String(i + 1).padStart(2, '0');
+        return `${selectedYear}-${m}`;
+    });
+
+    const labels = MESES; // ['Enero', 'Febrero', ..., 'Diciembre']
+    const pctDifferences = [];
+    const barColors = [];
+    const expTotals = [];
+
+    // Iterar mes a mes del año seleccionado
+    monthsInYear.forEach(ym => {
+        // 1. Calcular Ingresos y Egresos Operativos
+        const monthBase = rawData.base_de_datos.filter(item => item.periodo && item.periodo.startsWith(ym));
+        let ingOp = 0;
+        let egOp = 0;
+
+        monthBase.forEach(item => {
+            const monto = item.monto || 0;
+            if (item.tipo === 'Ingreso' && item.subtipo === 'Operativo') ingOp += monto;
+            if (item.tipo === 'Egreso' && item.subtipo === 'Operativo') egOp += monto;
+        });
+
+        // Diferencia Porcentual Operativa: ((Ingresos - Egresos) / Egresos) * 100
+        let pctDiff = 0;
+        if (egOp > 0) {
+            pctDiff = ((ingOp - egOp) / egOp) * 100;
+        } else if (ingOp > 0) {
+            pctDiff = 100; // Si no hubo egresos pero sí ingresos
+        }
+
+        pctDifferences.push(parseFloat(pctDiff.toFixed(2)));
+
+        // Verde si hubo ganancia (>= 0), Rojo si hubo pérdida (< 0)
+        if (pctDiff >= 0) {
+            barColors.push('#2E7D32'); // Verde (copa-success)
+        } else {
+            barColors.push('#D32F2F'); // Rojo (copa-danger)
+        }
+
+        // 2. Calcular expedientes ingresados en el mes
+        const monthExp = rawData.expedientes.filter(item => item.fecha && item.fecha.startsWith(ym));
+        let totalExpMonth = 0;
+        monthExp.forEach(e => {
+            totalExpMonth += e.total || 0;
+        });
+        expTotals.push(totalExpMonth);
+    });
+
+    // --- GRÁFICO 1: Diferencia Porcentual Operativa Mensual ---
+    const ctxRend = document.getElementById('chart-historico-rendimiento').getContext('2d');
+    if (charts.historicoRendimiento) charts.historicoRendimiento.destroy();
+
+    charts.historicoRendimiento = new Chart(ctxRend, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Diferencia Porcentual (%)',
+                data: pctDifferences,
+                backgroundColor: barColors,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const val = context.raw;
+                            const estado = val >= 0 ? 'Ganancia/Superávit' : 'Pérdida/Déficit';
+                            return `${estado}: ${val}%`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: { grid: { display: false } },
+                y: {
+                    grid: { color: '#F0F0F0' },
+                    ticks: {
+                        callback: function(value) { return value + '%'; }
+                    }
+                }
+            }
+        }
+    });
+
+    // --- GRÁFICO 2: Expedientes Ingresados en el Año ---
+    const ctxExpHist = document.getElementById('chart-historico-expedientes').getContext('2d');
+    if (charts.historicoExpedientes) charts.historicoExpedientes.destroy();
+
+    charts.historicoExpedientes = new Chart(ctxExpHist, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Expedientes Ingresados',
+                data: expTotals,
+                backgroundColor: '#1976D2',
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `Expedientes: ${context.raw}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: { grid: { display: false } },
+                y: {
+                    grid: { color: '#F0F0F0' },
+                    beginAtZero: true,
+                    ticks: { precision: 0 }
+                }
+            }
+        }
+    });
 }
