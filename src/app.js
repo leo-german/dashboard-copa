@@ -15,8 +15,8 @@ const selectGeneral = document.getElementById('filter-general');
 const selectFinancial = document.getElementById('filter-financial');
 const selectCurrency = document.getElementById('filter-currency');
 const selectCategoryType = document.getElementById('filter-category-type');
+const selectYearHistorical = document.getElementById('filter-year-historical'); // Selector Histórico
 const syncTimestampEl = document.getElementById('sync-timestamp');
-const selectYearHistorical = document.getElementById('filter-year-historical');
 
 // Helper para convertir "YYYY-MM-DD" o "YYYY-MM" en "Mes AAAA"
 function formatMonthYear(ymString) {
@@ -102,18 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Listeners para los filtros
     selectGeneral.addEventListener('change', updateDashboard);
     selectFinancial.addEventListener('change', updateFinancialSection);
-       if (selectYearHistorical) {
-        selectYearHistorical.addEventListener('change', updateHistoricalSection);
-    }
-
-        if (selectCurrency) {
+    if (selectCurrency) {
         selectCurrency.addEventListener('change', updateFinancialSection);
     }
-        if (selectCategoryType) {
+    if (selectCategoryType) {
         selectCategoryType.addEventListener('change', () => {
             const selectedGeneral = selectGeneral.value;
             updateBaseDeDatosSection(selectedGeneral);
         });
+    }
+    if (selectYearHistorical) {
+        selectYearHistorical.addEventListener('change', updateHistoricalSection);
     }
 });
 
@@ -148,10 +147,7 @@ function initFilters() {
         selectGeneral.appendChild(option);
     });
     
-    // Seleccionar por defecto el último mes que contenga datos (General)
-    // El análisis mostró que el último mes de base_de_datos es Abril 2026 (2026-04)
     if (sortedGeneralMonths.length > 0) {
-        // Buscamos 2026-04, si no la primera opción
         const target = sortedGeneralMonths.includes('2026-04') ? '2026-04' : sortedGeneralMonths[0];
         selectGeneral.value = target;
     }
@@ -176,26 +172,49 @@ function initFilters() {
         selectFinancial.appendChild(option);
     });
     
-    // Seleccionar por defecto el último mes registrado (Capital Financiero)
-    // El análisis mostró que el último mes de capital_financiero es Mayo 2026 (2026-05)
     if (sortedFinancialMonths.length > 0) {
         const target = sortedFinancialMonths.includes('2026-05') ? '2026-05' : sortedFinancialMonths[0];
         selectFinancial.value = target;
+    }
+
+    // 3. Obtener años únicos para el Filtro Histórico Anual
+    const historicalYears = new Set();
+    if (rawData.base_de_datos) {
+        rawData.base_de_datos.forEach(item => {
+            if (item.periodo) historicalYears.add(item.periodo.substring(0, 4));
+        });
+    }
+    if (rawData.expedientes) {
+        rawData.expedientes.forEach(item => {
+            if (item.fecha) historicalYears.add(item.fecha.substring(0, 4));
+        });
+    }
+    
+    const sortedYears = Array.from(historicalYears).sort().reverse();
+    
+    if (selectYearHistorical) {
+        selectYearHistorical.innerHTML = '';
+        sortedYears.forEach(yr => {
+            const option = document.createElement('option');
+            option.value = yr;
+            option.textContent = yr;
+            selectYearHistorical.appendChild(option);
+        });
+        
+        if (sortedYears.length > 0) {
+            selectYearHistorical.value = sortedYears[0];
+        }
     }
 }
 
 // Cambiar de pestaña en las tablas de detalle
 function switchTab(tabId) {
-    // Desactivar todos los botones
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    // Desactivar todo el contenido
     document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
     
-    // Activar el botón clicado
     const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => btn.getAttribute('onclick').includes(tabId));
     if (activeBtn) activeBtn.classList.add('active');
     
-    // Activar el contenido
     document.getElementById(tabId).classList.add('active');
 }
 
@@ -203,14 +222,13 @@ function switchTab(tabId) {
 function updateDashboard() {
     const selectedGeneral = selectGeneral.value;
     
-    // Si no hay datos, salir
     if (!rawData) return;
     
     updateBaseDeDatosSection(selectedGeneral);
     updateExpedientesSection(selectedGeneral);
     updateVepSection(selectedGeneral);
-    updateFinancialSection(); // Se llama independiente porque lee su propio selector
-    updateHistoricalSection();
+    updateHistoricalSection(); // Actualiza la sección histórica
+    updateFinancialSection();
 }
 
 // ----------------------------------------------------
@@ -219,11 +237,9 @@ function updateDashboard() {
 function updateBaseDeDatosSection(selectedYm) {
     const prevYm = getPreviousMonth(selectedYm);
     
-    // Filtrar datos del mes actual y mes anterior
     const currentData = rawData.base_de_datos.filter(item => item.periodo && item.periodo.startsWith(selectedYm));
     const prevData = rawData.base_de_datos.filter(item => item.periodo && item.periodo.startsWith(prevYm));
     
-    // Cálculos mes actual
     let ingresosTotal = 0;
     let ingresosOp = 0;
     let ingresosExt = 0;
@@ -248,7 +264,6 @@ function updateBaseDeDatosSection(selectedYm) {
     const balanceTotal = ingresosTotal - egresosTotal;
     const balanceOperativo = ingresosOp - egresosOp;
 
-    // Cálculos mes anterior (para deltas)
     let prevIngresosTotal = 0;
     let prevIngresosOp = 0;
     let prevEgresosTotal = 0;
@@ -268,19 +283,16 @@ function updateBaseDeDatosSection(selectedYm) {
     const prevBalanceTotal = prevIngresosTotal - prevEgresosTotal;
     const prevBalanceOperativo = prevIngresosOp - prevEgresosOp;
     
-    // Renderizar KPI Ingresos
     document.getElementById('kpi-ingresos-total').textContent = formatCurrency(ingresosTotal);
     document.getElementById('kpi-ingresos-op').textContent = formatCurrency(ingresosOp).split(',')[0];
     document.getElementById('kpi-ingresos-ext').textContent = formatCurrency(ingresosExt).split(',')[0];
-    renderDelta('kpi-ingresos-delta', ingresosTotal, prevIngresosTotal, true); // true = subir es bueno
+    renderDelta('kpi-ingresos-delta', ingresosTotal, prevIngresosTotal, true);
     
-    // Renderizar KPI Egresos
     document.getElementById('kpi-egresos-total').textContent = formatCurrency(egresosTotal);
     document.getElementById('kpi-egresos-op').textContent = formatCurrency(egresosOp).split(',')[0];
     document.getElementById('kpi-egresos-ext').textContent = formatCurrency(egresosExt).split(',')[0];
-    renderDelta('kpi-egresos-delta', egresosTotal, prevEgresosTotal, false); // false = subir es malo
+    renderDelta('kpi-egresos-delta', egresosTotal, prevEgresosTotal, false);
     
-    // Renderizar KPI Balance Operativo
     document.getElementById('kpi-balance-operativo').textContent = formatCurrency(balanceOperativo);
     const balanceOperativoTypeEl = document.getElementById('kpi-balance-operativo-type');
     if (balanceOperativo >= 0) {
@@ -292,7 +304,6 @@ function updateBaseDeDatosSection(selectedYm) {
     }
     renderDelta('kpi-balance-operativo-delta', balanceOperativo, prevBalanceOperativo, true);
 
-    // Renderizar KPI Balance General
     document.getElementById('kpi-balance-total').textContent = formatCurrency(balanceTotal);
     const balanceTypeEl = document.getElementById('kpi-balance-type');
     if (balanceTotal >= 0) {
@@ -362,7 +373,6 @@ function updateBaseDeDatosSection(selectedYm) {
     });
 
     // --- GRÁFICO 2: Desglose por Categoría ---
-    // Agrupar montos por categoría del mes seleccionado, filtrando por el tipo (Ingreso/Egreso) seleccionado
     const categoryType = selectCategoryType ? selectCategoryType.value : 'Ingreso';
     const catMap = {};
     currentData.forEach(item => {
@@ -372,7 +382,6 @@ function updateBaseDeDatosSection(selectedYm) {
         }
     });
     
-    // Ordenar de mayor a menor y tomar top 6
     const sortedCats = Object.entries(catMap)
         .sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]))
         .slice(0, 6);
@@ -395,7 +404,7 @@ function updateBaseDeDatosSection(selectedYm) {
             }]
         },
         options: {
-            indexAxis: 'y', // Barra horizontal
+            indexAxis: 'y',
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
@@ -417,14 +426,11 @@ function updateBaseDeDatosSection(selectedYm) {
                         }
                     }
                 },
-                y: {
-                    grid: { display: false }
-                }
+                y: { grid: { display: false } }
             }
         }
     });
 
-    // Llenar tabla detallada "Base de Datos"
     const tbody = document.getElementById('table-base-body');
     tbody.innerHTML = '';
     
@@ -450,7 +456,6 @@ function updateBaseDeDatosSection(selectedYm) {
 function updateExpedientesSection(selectedYm) {
     const prevYm = getPreviousMonth(selectedYm);
     
-    // Filtrar datos del mes actual y anterior
     const currentExp = rawData.expedientes.filter(item => item.fecha && item.fecha.startsWith(selectedYm));
     const prevExp = rawData.expedientes.filter(item => item.fecha && item.fecha.startsWith(prevYm));
     
@@ -471,7 +476,6 @@ function updateExpedientesSection(selectedYm) {
         prevTotal += item.total || 0;
     });
     
-    // Actualizar KPI
     document.getElementById('kpi-exp-total').textContent = total.toLocaleString('es-AR');
     renderDelta('kpi-exp-delta', total, prevTotal, true);
     
@@ -485,11 +489,10 @@ function updateExpedientesSection(selectedYm) {
     document.getElementById('kpi-exp-vep-pct').textContent = total > 0 ? `${Math.round((vep/total)*100)}% del total` : '0% del total';
 
     // --- GRÁFICO 3: Evolución Histórica de los últimos 6 meses de Expedientes ---
-    // Encontrar los 6 meses anteriores al seleccionado
     const last6Months = [];
     let tempYm = selectedYm;
     for (let i = 0; i < 6; i++) {
-        last6Months.unshift(tempYm); // Insertar al principio para mantener orden cronológico
+        last6Months.unshift(tempYm);
         tempYm = getPreviousMonth(tempYm);
     }
     
@@ -520,7 +523,6 @@ function updateExpedientesSection(selectedYm) {
                     backgroundColor: 'rgba(211, 47, 47, 0.05)',
                     borderWidth: 3,
                     fill: true,
-                    // Estilo de marcador circular rojo con círculo blanco más pequeño dentro
                     pointBackgroundColor: '#FFFFFF',
                     pointBorderColor: 'var(--copa-red)',
                     pointBorderWidth: 2,
@@ -602,7 +604,6 @@ function updateVepSection(selectedYm) {
         else if (item.tipo === 'Gasto') prevGastos += monto;
     });
     
-    // Actualizar KPI
     document.getElementById('kpi-vep-ingresos').textContent = formatCurrency(ingresos);
     renderDelta('kpi-vep-ingresos-delta', ingresos, prevIngresos, true);
     
@@ -621,6 +622,8 @@ function updateVepSection(selectedYm) {
 
     // --- GRÁFICO 4: Comparación Ingresos vs Egresos VEP_SCIT ---
     const ctxVepBar = document.getElementById('chart-vep-rendicion').getContext('2d');
+    if (charts.vepRendicion) charts.vepRendicion.destroy(); // Corregido: Destrucción previa
+    
     charts.vepRendicion = new Chart(ctxVepBar, {
         type: 'bar',
         data: {
@@ -722,7 +725,6 @@ function updateVepSection(selectedYm) {
         }
     });
 
-    // Llenar tabla detallada "VEP_SCIT"
     const tbody = document.getElementById('table-vep-body');
     tbody.innerHTML = '';
     currentVep.slice(0, 15).forEach(item => {
@@ -748,7 +750,6 @@ function updateFinancialSection() {
     const selectedCurrency = selectCurrency ? selectCurrency.value : 'ARS';
     if (!rawData || !selectedYm) return;
     
-    // Filtrar capital del mes seleccionado de constitución y por moneda
     const currentCap = rawData.capital_financiero.filter(item => 
         item.fecha_constitucion && 
         item.fecha_constitucion.startsWith(selectedYm) &&
@@ -763,8 +764,6 @@ function updateFinancialSection() {
     let liquidezCap = 0;
     
     let tnaPonderadaNumerador = 0;
-    
-    // Para el gráfico de entidades
     const entidadesMap = {};
     
     currentCap.forEach(item => {
@@ -783,7 +782,6 @@ function updateFinancialSection() {
         
         tnaPonderadaNumerador += (capital * tna);
         
-        // Agrupar por entidad
         if (!entidadesMap[entidad]) {
             entidadesMap[entidad] = { capital: 0, interes: 0 };
         }
@@ -793,12 +791,10 @@ function updateFinancialSection() {
     
     const tnaPromedio = totalCapital > 0 ? (tnaPonderadaNumerador / totalCapital) : 0;
     
-    // Actualizar KPI de Capital Financiero
     document.getElementById('kpi-cap-total').textContent = formatCurrency(totalCapital, selectedCurrency);
     document.getElementById('kpi-cap-interes').textContent = formatCurrency(totalIntereses, selectedCurrency);
     document.getElementById('kpi-cap-tna').textContent = `${tnaPromedio.toFixed(2)}%`;
     
-    // Moneda
     const monedaEl = document.getElementById('kpi-cap-moneda');
     monedaEl.textContent = selectedCurrency;
 
@@ -896,7 +892,6 @@ function updateFinancialSection() {
         }
     });
 
-    // Llenar tabla detallada "Capital Financiero"
     const tbody = document.getElementById('table-cap-body');
     tbody.innerHTML = '';
     
@@ -922,13 +917,130 @@ function updateFinancialSection() {
 }
 
 // ----------------------------------------------------
+// SECCIÓN 5: ANÁLISIS HISTÓRICO ANUAL
+// ----------------------------------------------------
+function updateHistoricalSection() {
+    if (!selectYearHistorical) return;
+    const selectedYear = selectYearHistorical.value;
+    if (!rawData || !selectedYear) return;
+
+    const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+    const monthNames = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+
+    const balanceOpData = [];
+    const backgroundColors = [];
+    const expedientesData = [];
+
+    months.forEach(m => {
+        const ym = `${selectedYear}-${m}`;
+        
+        // Base de datos (Ingresos vs Egresos Operativos)
+        const currentBD = (rawData.base_de_datos || []).filter(item => item.periodo && item.periodo.startsWith(ym));
+        let ingOp = 0;
+        let egOp = 0;
+        currentBD.forEach(item => {
+            if (item.subtipo === 'Operativo') {
+                if (item.tipo === 'Ingreso') ingOp += item.monto || 0;
+                else if (item.tipo === 'Egreso') egOp += item.monto || 0;
+            }
+        });
+        const balanceOp = ingOp - egOp;
+        balanceOpData.push(balanceOp);
+        backgroundColors.push(balanceOp >= 0 ? '#2E7D32' : '#D32F2F');
+
+        // Expedientes
+        const currentExp = (rawData.expedientes || []).filter(item => item.fecha && item.fecha.startsWith(ym));
+        let totalExp = 0;
+        currentExp.forEach(item => {
+            totalExp += item.total || 0;
+        });
+        expedientesData.push(totalExp);
+    });
+
+    // --- GRÁFICO: Balance Operativo Histórico ---
+    const canvasRendimiento = document.getElementById('chart-historico-rendimiento');
+    if (canvasRendimiento) {
+        const ctxRend = canvasRendimiento.getContext('2d');
+        if (charts.historicoRendimiento) charts.historicoRendimiento.destroy();
+        
+        charts.historicoRendimiento = new Chart(ctxRend, {
+            type: 'bar',
+            data: {
+                labels: monthNames,
+                datasets: [{
+                    label: 'Resultado Operativo ($)',
+                    data: balanceOpData,
+                    backgroundColor: backgroundColors,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Resultado: ${formatCurrency(context.raw)}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: {
+                        grid: { color: '#F0F0F0' },
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString('es-AR');
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // --- GRÁFICO: Expedientes Histórico ---
+    const canvasExp = document.getElementById('chart-historico-expedientes');
+    if (canvasExp) {
+        const ctxExp = canvasExp.getContext('2d');
+        if (charts.historicoExpedientes) charts.historicoExpedientes.destroy();
+
+        charts.historicoExpedientes = new Chart(ctxExp, {
+            type: 'bar',
+            data: {
+                labels: monthNames,
+                datasets: [{
+                    label: 'Total Expedientes',
+                    data: expedientesData,
+                    backgroundColor: '#D32F2F',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { grid: { color: '#F0F0F0' }, min: 0 }
+                }
+            }
+        });
+    }
+}
+
+// ----------------------------------------------------
 // HELPERS DELTA RENDER (VARIACIÓN INTERMENSUAL)
 // ----------------------------------------------------
 function renderDelta(elementId, current, previous, positiveIsGood = true) {
     const el = document.getElementById(elementId);
     if (!el) return;
     
-    // Si el mes anterior no tiene datos o es 0
     if (!previous || previous === 0) {
         el.className = 'kpi-delta neutral';
         el.innerHTML = '<span class="delta-pct">N/D</span> vs mes anterior';
@@ -951,143 +1063,4 @@ function renderDelta(elementId, current, previous, positiveIsGood = true) {
         el.className = `kpi-delta ${goodClass}`;
         el.innerHTML = `<span class="delta-arrow">${arrow}</span> <span class="delta-pct">${sign}${pct.toFixed(1)}%</span> vs mes anterior`;
     }
-}
-
-// ----------------------------------------------------
-// SECCIÓN NUEVA: ANÁLISIS HISTÓRICO ANUAL
-// ----------------------------------------------------
-function updateHistoricalSection() {
-    const selectedYear = selectYearHistorical.value;
-    if (!rawData || !selectedYear) return;
-
-    // Array de los 12 meses para el año seleccionado (ej: "2025-01", "2025-02", ...)
-    const monthsInYear = Array.from({ length: 12 }, (_, i) => {
-        const m = String(i + 1).padStart(2, '0');
-        return `${selectedYear}-${m}`;
-    });
-
-    const labels = MESES; // ['Enero', 'Febrero', ..., 'Diciembre']
-    const pctDifferences = [];
-    const barColors = [];
-    const expTotals = [];
-
-    // Iterar mes a mes del año seleccionado
-    monthsInYear.forEach(ym => {
-        // 1. Calcular Ingresos y Egresos Operativos
-        const monthBase = rawData.base_de_datos.filter(item => item.periodo && item.periodo.startsWith(ym));
-        let ingOp = 0;
-        let egOp = 0;
-
-        monthBase.forEach(item => {
-            const monto = item.monto || 0;
-            if (item.tipo === 'Ingreso' && item.subtipo === 'Operativo') ingOp += monto;
-            if (item.tipo === 'Egreso' && item.subtipo === 'Operativo') egOp += monto;
-        });
-
-        // Diferencia Porcentual Operativa: ((Ingresos - Egresos) / Egresos) * 100
-        let pctDiff = 0;
-        if (egOp > 0) {
-            pctDiff = ((ingOp - egOp) / egOp) * 100;
-        } else if (ingOp > 0) {
-            pctDiff = 100; // Si no hubo egresos pero sí ingresos
-        }
-
-        pctDifferences.push(parseFloat(pctDiff.toFixed(2)));
-
-        // Verde si hubo ganancia (>= 0), Rojo si hubo pérdida (< 0)
-        if (pctDiff >= 0) {
-            barColors.push('#2E7D32'); // Verde (copa-success)
-        } else {
-            barColors.push('#D32F2F'); // Rojo (copa-danger)
-        }
-
-        // 2. Calcular expedientes ingresados en el mes
-        const monthExp = rawData.expedientes.filter(item => item.fecha && item.fecha.startsWith(ym));
-        let totalExpMonth = 0;
-        monthExp.forEach(e => {
-            totalExpMonth += e.total || 0;
-        });
-        expTotals.push(totalExpMonth);
-    });
-
-    // --- GRÁFICO 1: Diferencia Porcentual Operativa Mensual ---
-    const ctxRend = document.getElementById('chart-historico-rendimiento').getContext('2d');
-    if (charts.historicoRendimiento) charts.historicoRendimiento.destroy();
-
-    charts.historicoRendimiento = new Chart(ctxRend, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Diferencia Porcentual (%)',
-                data: pctDifferences,
-                backgroundColor: barColors,
-                borderRadius: 4
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            const val = context.raw;
-                            const estado = val >= 0 ? 'Ganancia/Superávit' : 'Pérdida/Déficit';
-                            return `${estado}: ${val}%`;
-                        }
-                    }
-                }
-            },
-            scales: {
-                x: { grid: { display: false } },
-                y: {
-                    grid: { color: '#F0F0F0' },
-                    ticks: {
-                        callback: function(value) { return value + '%'; }
-                    }
-                }
-            }
-        }
-    });
-
-    // --- GRÁFICO 2: Expedientes Ingresados en el Año ---
-    const ctxExpHist = document.getElementById('chart-historico-expedientes').getContext('2d');
-    if (charts.historicoExpedientes) charts.historicoExpedientes.destroy();
-
-    charts.historicoExpedientes = new Chart(ctxExpHist, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Expedientes Ingresados',
-                data: expTotals,
-                backgroundColor: '#1976D2',
-                borderRadius: 4
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return `Expedientes: ${context.raw}`;
-                        }
-                    }
-                }
-            },
-            scales: {
-                x: { grid: { display: false } },
-                y: {
-                    grid: { color: '#F0F0F0' },
-                    beginAtZero: true,
-                    ticks: { precision: 0 }
-                }
-            }
-        }
-    });
 }
