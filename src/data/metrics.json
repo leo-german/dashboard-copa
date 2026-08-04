@@ -6411,6 +6411,307 @@
       "subtipo": "Extraordinario",
       "categoria": "Pagos Registro de la Propiedad",
       "monto": 6433600.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "Matrícula",
+      "monto": 4353816.11
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "Honorarios Variables",
+      "monto": 26889158.43
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "Aporte FADA",
+      "monto": 1823800.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "Fondo Contingencia",
+      "monto": -181934.36
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "VEP",
+      "monto": 19562337.7
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "VEP Catastro (5%)",
+      "monto": 10207718.85
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Ingreso",
+      "subtipo": "Operativo",
+      "categoria": "CCU",
+      "monto": 9267319.12
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Ingreso",
+      "subtipo": "Extraordinario",
+      "categoria": "MIT",
+      "monto": 24135750.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Ingreso",
+      "subtipo": "Extraordinario",
+      "categoria": "Cobros Registro de la Propiedad",
+      "monto": 7115800.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Ingreso",
+      "subtipo": "Extraordinario",
+      "categoria": "Ingresos Cursos/Talleres/Cena Agrimensores",
+      "monto": 2000000.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Movilidad y Viaticos",
+      "monto": 8640.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Cadeteria y Fletes",
+      "monto": 431200.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Insumos computación/Sistema (hosting anual)",
+      "monto": 100000.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Librería y Papeleria",
+      "monto": 59800.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Agasajos/Reuniones",
+      "monto": 44600.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Viáticos Asistencias a Reuniones en Colegio",
+      "monto": 696985.32
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Congresos/ Charlas/Talleres (dentro y fuera de Sta. Fe)",
+      "monto": 12532384.5
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Gastos Asistencia Directores a reuniones",
+      "monto": 869956.06
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Varios",
+      "monto": 294240.51
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Reparaciones y repuestos",
+      "monto": 225844.08
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Fada",
+      "monto": 411400.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Seguridad y Vigilancia",
+      "monto": 181820.3
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Electricidad",
+      "monto": 390185.41
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Agua y Gas",
+      "monto": 132899.94
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Leyes Sociales y gtos. del personal",
+      "monto": 18502223.21
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Honorarios",
+      "monto": 7228148.45
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Limpieza",
+      "monto": 1113000.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Publicidad (Avisos Colegio)",
+      "monto": 2832565.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Telefono e Internet",
+      "monto": 124766.75
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Sueldos y Anticipos al personal",
+      "monto": 22408612.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Beneficios al personal (OSDE y uniformes)",
+      "monto": 940001.09
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Comisiones y gastos bancarias",
+      "monto": 1044489.55
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Imp. Ley 25413 (bancario)",
+      "monto": 536964.05
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Seguros de Vida y Accidentes del Personal/Seguros",
+      "monto": 703608.02
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Seguros s/ Inmuebles",
+      "monto": 138727.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Donaciones",
+      "monto": 40000.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Pago FADA Aportes sobre Expedientes (GEO)",
+      "monto": 608000.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Gastos VEP Catastro (sueldos personal y factura ImageDATA)",
+      "monto": 9813679.76
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Operativo",
+      "categoria": "Impuestos, Tasas y Servicios",
+      "monto": 87015.54
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Extraordinario",
+      "categoria": "Regalos institucionales",
+      "monto": 3724500.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Extraordinario",
+      "categoria": "Inversión Plazo Fijo",
+      "monto": -22222910.95
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Extraordinario",
+      "categoria": "Honorarios Convenio MIT Pagados",
+      "monto": 20670750.0
+    },
+    {
+      "periodo": "2026-05-10",
+      "tipo": "Egreso",
+      "subtipo": "Extraordinario",
+      "categoria": "Pagos Registro de la Propiedad",
+      "monto": 7134100.0
     }
   ],
   "expedientes": [
@@ -7704,10 +8005,10 @@
     },
     {
       "fecha": "2026-05-01",
-      "comunes": 0,
-      "ccu": 0,
-      "vep": 0,
-      "total": 0
+      "comunes": 256,
+      "ccu": 78,
+      "vep": 495,
+      "total": 829
     },
     {
       "fecha": "2026-06-01",
@@ -8719,386 +9020,14 @@
     {
       "fecha": "2026-05-01",
       "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
+      "concepto": "VEP 495 exptes.",
+      "monto": 10207718.0
     },
     {
       "fecha": "2026-05-01",
       "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-06-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-06-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-07-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-07-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-08-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-08-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-09-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-09-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-10-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-10-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-11-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-11-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-12-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2026-12-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-01-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-01-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-02-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-02-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-03-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-03-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-04-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-04-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-05-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-05-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-06-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-06-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-07-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-07-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-08-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-08-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-09-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-09-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-10-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-10-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-11-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-11-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-12-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2027-12-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-01-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-01-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-02-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-02-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-03-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-03-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-04-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-04-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-05-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-05-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-06-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-06-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-07-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-07-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-08-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-08-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-09-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-09-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-10-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-10-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-11-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-11-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-12-01",
-      "tipo": "Ingreso",
-      "concepto": "",
-      "monto": 0.0
-    },
-    {
-      "fecha": "2028-12-01",
-      "tipo": "Gasto",
-      "concepto": "",
-      "monto": 0.0
+      "concepto": "Sueldos 5 empleados contratados (Varoli/Menéndez/Stepanski/García/Borgnino)",
+      "monto": 9813679.76
     }
   ],
   "capital_financiero": [
@@ -10349,7 +10278,115 @@
       "tna": 22.0,
       "plazo": 30,
       "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Liquidez",
+      "fecha_constitucion": "2026-06-02",
+      "fecha_vencimiento": "2026-06-23",
+      "moneda": "ARS",
+      "capital": 54494.0,
+      "interes": 0.0,
+      "monto_final": 54494.0,
+      "tna": 0.0,
+      "plazo": 0,
+      "entidad": "Banco Santa Fe"
+    },
+    {
+      "tipo_activo": "Liquidez",
+      "fecha_constitucion": "2026-06-02",
+      "fecha_vencimiento": "2026-06-23",
+      "moneda": "ARS",
+      "capital": 43737.0,
+      "interes": 0.0,
+      "monto_final": 43737.0,
+      "tna": 0.0,
+      "plazo": 0,
+      "entidad": "Banco Macro"
+    },
+    {
+      "tipo_activo": "Liquidez",
+      "fecha_constitucion": "2026-06-02",
+      "fecha_vencimiento": "2026-06-23",
+      "moneda": "ARS",
+      "capital": 164905.0,
+      "interes": 0.0,
+      "monto_final": 164905.0,
+      "tna": 0.0,
+      "plazo": 0,
+      "entidad": "Caja chica"
+    },
+    {
+      "tipo_activo": "FCI",
+      "fecha_constitucion": "2026-06-02",
+      "fecha_vencimiento": "2026-06-23",
+      "moneda": "USD",
+      "capital": 84738.3,
+      "interes": 0.0,
+      "monto_final": 84738.3,
+      "tna": 0.0,
+      "plazo": 0,
+      "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Plazo fijo",
+      "fecha_constitucion": "2026-06-02",
+      "fecha_vencimiento": "2026-06-23",
+      "moneda": "ARS",
+      "capital": 105600000.0,
+      "interes": 2227726.0,
+      "monto_final": 107827726.0,
+      "tna": 22.0,
+      "plazo": 30,
+      "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Plazo fijo",
+      "fecha_constitucion": "2026-06-02",
+      "fecha_vencimiento": "2026-06-23",
+      "moneda": "ARS",
+      "capital": 22100000.0,
+      "interes": 466218.0,
+      "monto_final": 22566218.0,
+      "tna": 22.0,
+      "plazo": 30,
+      "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Plazo fijo",
+      "fecha_constitucion": "2026-06-02",
+      "fecha_vencimiento": "2026-06-23",
+      "moneda": "ARS",
+      "capital": 25000000.0,
+      "interes": 503424.0,
+      "monto_final": 25503424.0,
+      "tna": 21.0,
+      "plazo": 30,
+      "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Plazo fijo",
+      "fecha_constitucion": "2026-06-02",
+      "fecha_vencimiento": "2026-06-23",
+      "moneda": "ARS",
+      "capital": 36600000.0,
+      "interes": 728239.0,
+      "monto_final": 37328239.0,
+      "tna": 20.75,
+      "plazo": 30,
+      "entidad": "Macro"
+    },
+    {
+      "tipo_activo": "Plazo fijo",
+      "fecha_constitucion": "2026-06-02",
+      "fecha_vencimiento": "2026-06-23",
+      "moneda": "ARS",
+      "capital": 40900000.0,
+      "interes": 853017.0,
+      "monto_final": 41753017.0,
+      "tna": 21.75,
+      "plazo": 30,
+      "entidad": "Macro"
     }
   ],
-  "last_updated": "2026-05-28T16:52:03Z"
+  "last_updated": "2026-08-04T12:35:22Z"
 }
