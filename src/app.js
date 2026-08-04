@@ -148,8 +148,7 @@ function initFilters() {
     });
     
     if (sortedGeneralMonths.length > 0) {
-        const target = sortedGeneralMonths.includes('2026-04') ? '2026-04' : sortedGeneralMonths[0];
-        selectGeneral.value = target;
+        selectGeneral.value = sortedGeneralMonths[0];
     }
 
     // 2. Obtener meses únicos para el Filtro Financiero (capital_financiero)
@@ -173,8 +172,7 @@ function initFilters() {
     });
     
     if (sortedFinancialMonths.length > 0) {
-        const target = sortedFinancialMonths.includes('2026-05') ? '2026-05' : sortedFinancialMonths[0];
-        selectFinancial.value = target;
+        selectFinancial.value = sortedFinancialMonths[0];
     }
 
     // 3. Obtener años únicos para el Filtro Histórico Anual
