@@ -77,17 +77,39 @@ def find_worksheet_by_partial_title(sh, part):
 def main():
     logging.info("Starting synchronization process with Google Sheets...")
     
-    # 1. Obtener credenciales y configurar cliente
-    cred_file = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "credentials.json")
-    if not os.path.exists(cred_file):
-        logging.error(f"Credentials file '{cred_file}' not found. Cannot proceed.")
-        return
+# 1. Obtener credenciales y configurar cliente
+    def obtener_cliente_gspread():
+        scopes = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
         
-    scopes = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
-    creds = Credentials.from_service_account_file(cred_file, scopes=scopes)
-    client = gspread.authorize(creds)
-    
-    # 2. Conectar al Spreadsheet
+        # Revisa si GitHub Actions envió la clave en variable de entorno
+        cred_env = os.getenv("GOOGLE_CREDENTIALS_ENV") or os.getenv("GOOGLE_CREDENTIALS")
+        
+        # Ruta alternativa si ejecutas el script localmente en tu equipo
+        cred_file = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "credentials.json")
+        
+        if cred_env:
+            try:
+                creds_dict = json.loads(cred_env)
+                creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
+                logging.info("Autenticación exitosa desde variable de entorno (GitHub Actions).")
+                return gspread.authorize(creds)
+            except Exception as e:
+                logging.error(f"Error al procesar las credenciales desde ENV: {e}")
+                raise e
+                
+        elif os.path.exists(cred_file):
+            creds = Credentials.from_service_account_file(cred_file, scopes=scopes)
+            logging.info(f"Autenticación exitosa desde archivo local '{cred_file}'.")
+            return gspread.authorize(creds)
+            
+        else:
+            raise FileNotFoundError(
+                "No se encontraron credenciales válidas en la variable de entorno ni en credentials.json"
+            )
+
+    client = obtener_cliente_gspread()
+
+    # 2. Conectar al Spreadsheet (MANTIENES ESTE BLOQUE TAL COMO ESTÁ)
     sheet_id = os.getenv("SPREADSHEET_ID", "1ggeuKuCFZsUpDfRl2wPLOqWD2in7uL9Y3yHTaui_A0w")
     try:
         sh = client.open_by_key(sheet_id)
