@@ -1,6 +1,1309 @@
 {
   "base_de_datos": [],
-  "expedientes": [],
+  "expedientes": [
+    {
+      "fecha": "2011-01-01",
+      "comunes": 376,
+      "ccu": 0,
+      "vep": 0,
+      "total": 376
+    },
+    {
+      "fecha": "2011-02-01",
+      "comunes": 338,
+      "ccu": 0,
+      "vep": 0,
+      "total": 338
+    },
+    {
+      "fecha": "2011-03-01",
+      "comunes": 389,
+      "ccu": 0,
+      "vep": 0,
+      "total": 389
+    },
+    {
+      "fecha": "2011-04-01",
+      "comunes": 603,
+      "ccu": 0,
+      "vep": 0,
+      "total": 603
+    },
+    {
+      "fecha": "2011-05-01",
+      "comunes": 585,
+      "ccu": 0,
+      "vep": 0,
+      "total": 585
+    },
+    {
+      "fecha": "2011-06-01",
+      "comunes": 622,
+      "ccu": 0,
+      "vep": 0,
+      "total": 622
+    },
+    {
+      "fecha": "2011-07-01",
+      "comunes": 494,
+      "ccu": 0,
+      "vep": 0,
+      "total": 494
+    },
+    {
+      "fecha": "2011-08-01",
+      "comunes": 519,
+      "ccu": 0,
+      "vep": 0,
+      "total": 519
+    },
+    {
+      "fecha": "2011-09-01",
+      "comunes": 566,
+      "ccu": 0,
+      "vep": 0,
+      "total": 566
+    },
+    {
+      "fecha": "2011-10-01",
+      "comunes": 572,
+      "ccu": 0,
+      "vep": 0,
+      "total": 572
+    },
+    {
+      "fecha": "2011-11-01",
+      "comunes": 554,
+      "ccu": 0,
+      "vep": 0,
+      "total": 554
+    },
+    {
+      "fecha": "2011-12-01",
+      "comunes": 486,
+      "ccu": 0,
+      "vep": 0,
+      "total": 486
+    },
+    {
+      "fecha": "2012-01-01",
+      "comunes": 343,
+      "ccu": 0,
+      "vep": 0,
+      "total": 343
+    },
+    {
+      "fecha": "2012-02-01",
+      "comunes": 364,
+      "ccu": 0,
+      "vep": 0,
+      "total": 364
+    },
+    {
+      "fecha": "2012-03-01",
+      "comunes": 437,
+      "ccu": 0,
+      "vep": 0,
+      "total": 437
+    },
+    {
+      "fecha": "2012-04-01",
+      "comunes": 345,
+      "ccu": 0,
+      "vep": 0,
+      "total": 345
+    },
+    {
+      "fecha": "2012-05-01",
+      "comunes": 419,
+      "ccu": 0,
+      "vep": 0,
+      "total": 419
+    },
+    {
+      "fecha": "2012-06-01",
+      "comunes": 436,
+      "ccu": 0,
+      "vep": 0,
+      "total": 436
+    },
+    {
+      "fecha": "2012-07-01",
+      "comunes": 432,
+      "ccu": 0,
+      "vep": 0,
+      "total": 432
+    },
+    {
+      "fecha": "2012-08-01",
+      "comunes": 500,
+      "ccu": 0,
+      "vep": 0,
+      "total": 500
+    },
+    {
+      "fecha": "2012-09-01",
+      "comunes": 368,
+      "ccu": 0,
+      "vep": 0,
+      "total": 368
+    },
+    {
+      "fecha": "2012-10-01",
+      "comunes": 604,
+      "ccu": 0,
+      "vep": 0,
+      "total": 604
+    },
+    {
+      "fecha": "2012-11-01",
+      "comunes": 547,
+      "ccu": 0,
+      "vep": 0,
+      "total": 547
+    },
+    {
+      "fecha": "2012-12-01",
+      "comunes": 522,
+      "ccu": 0,
+      "vep": 0,
+      "total": 522
+    },
+    {
+      "fecha": "2013-01-01",
+      "comunes": 365,
+      "ccu": 0,
+      "vep": 0,
+      "total": 365
+    },
+    {
+      "fecha": "2013-02-01",
+      "comunes": 406,
+      "ccu": 0,
+      "vep": 0,
+      "total": 406
+    },
+    {
+      "fecha": "2013-03-01",
+      "comunes": 446,
+      "ccu": 0,
+      "vep": 0,
+      "total": 446
+    },
+    {
+      "fecha": "2013-04-01",
+      "comunes": 485,
+      "ccu": 0,
+      "vep": 0,
+      "total": 485
+    },
+    {
+      "fecha": "2013-05-01",
+      "comunes": 518,
+      "ccu": 0,
+      "vep": 0,
+      "total": 518
+    },
+    {
+      "fecha": "2013-06-01",
+      "comunes": 448,
+      "ccu": 0,
+      "vep": 0,
+      "total": 448
+    },
+    {
+      "fecha": "2013-07-01",
+      "comunes": 522,
+      "ccu": 8,
+      "vep": 0,
+      "total": 530
+    },
+    {
+      "fecha": "2013-08-01",
+      "comunes": 387,
+      "ccu": 27,
+      "vep": 0,
+      "total": 414
+    },
+    {
+      "fecha": "2013-09-01",
+      "comunes": 407,
+      "ccu": 41,
+      "vep": 0,
+      "total": 448
+    },
+    {
+      "fecha": "2013-10-01",
+      "comunes": 455,
+      "ccu": 64,
+      "vep": 0,
+      "total": 519
+    },
+    {
+      "fecha": "2013-11-01",
+      "comunes": 419,
+      "ccu": 58,
+      "vep": 0,
+      "total": 477
+    },
+    {
+      "fecha": "2013-12-01",
+      "comunes": 371,
+      "ccu": 47,
+      "vep": 0,
+      "total": 418
+    },
+    {
+      "fecha": "2014-01-01",
+      "comunes": 331,
+      "ccu": 47,
+      "vep": 0,
+      "total": 378
+    },
+    {
+      "fecha": "2014-02-01",
+      "comunes": 334,
+      "ccu": 51,
+      "vep": 0,
+      "total": 385
+    },
+    {
+      "fecha": "2014-03-01",
+      "comunes": 373,
+      "ccu": 37,
+      "vep": 0,
+      "total": 410
+    },
+    {
+      "fecha": "2014-04-01",
+      "comunes": 377,
+      "ccu": 51,
+      "vep": 0,
+      "total": 428
+    },
+    {
+      "fecha": "2014-05-01",
+      "comunes": 351,
+      "ccu": 58,
+      "vep": 0,
+      "total": 409
+    },
+    {
+      "fecha": "2014-06-01",
+      "comunes": 335,
+      "ccu": 51,
+      "vep": 0,
+      "total": 386
+    },
+    {
+      "fecha": "2014-07-01",
+      "comunes": 445,
+      "ccu": 60,
+      "vep": 0,
+      "total": 505
+    },
+    {
+      "fecha": "2014-08-01",
+      "comunes": 328,
+      "ccu": 46,
+      "vep": 0,
+      "total": 374
+    },
+    {
+      "fecha": "2014-09-01",
+      "comunes": 402,
+      "ccu": 62,
+      "vep": 0,
+      "total": 464
+    },
+    {
+      "fecha": "2014-10-01",
+      "comunes": 445,
+      "ccu": 80,
+      "vep": 0,
+      "total": 525
+    },
+    {
+      "fecha": "2014-11-01",
+      "comunes": 351,
+      "ccu": 60,
+      "vep": 0,
+      "total": 411
+    },
+    {
+      "fecha": "2014-12-01",
+      "comunes": 415,
+      "ccu": 53,
+      "vep": 0,
+      "total": 468
+    },
+    {
+      "fecha": "2015-01-01",
+      "comunes": 368,
+      "ccu": 27,
+      "vep": 0,
+      "total": 395
+    },
+    {
+      "fecha": "2015-02-01",
+      "comunes": 263,
+      "ccu": 37,
+      "vep": 0,
+      "total": 300
+    },
+    {
+      "fecha": "2015-03-01",
+      "comunes": 320,
+      "ccu": 51,
+      "vep": 0,
+      "total": 371
+    },
+    {
+      "fecha": "2015-04-01",
+      "comunes": 318,
+      "ccu": 66,
+      "vep": 0,
+      "total": 384
+    },
+    {
+      "fecha": "2015-05-01",
+      "comunes": 323,
+      "ccu": 48,
+      "vep": 0,
+      "total": 371
+    },
+    {
+      "fecha": "2015-06-01",
+      "comunes": 379,
+      "ccu": 129,
+      "vep": 0,
+      "total": 508
+    },
+    {
+      "fecha": "2015-07-01",
+      "comunes": 416,
+      "ccu": 141,
+      "vep": 0,
+      "total": 557
+    },
+    {
+      "fecha": "2015-08-01",
+      "comunes": 318,
+      "ccu": 69,
+      "vep": 0,
+      "total": 387
+    },
+    {
+      "fecha": "2015-09-01",
+      "comunes": 387,
+      "ccu": 80,
+      "vep": 0,
+      "total": 467
+    },
+    {
+      "fecha": "2015-10-01",
+      "comunes": 362,
+      "ccu": 91,
+      "vep": 0,
+      "total": 453
+    },
+    {
+      "fecha": "2015-11-01",
+      "comunes": 319,
+      "ccu": 72,
+      "vep": 0,
+      "total": 391
+    },
+    {
+      "fecha": "2015-12-01",
+      "comunes": 332,
+      "ccu": 87,
+      "vep": 0,
+      "total": 419
+    },
+    {
+      "fecha": "2016-01-01",
+      "comunes": 248,
+      "ccu": 25,
+      "vep": 0,
+      "total": 273
+    },
+    {
+      "fecha": "2016-02-01",
+      "comunes": 236,
+      "ccu": 33,
+      "vep": 0,
+      "total": 269
+    },
+    {
+      "fecha": "2016-03-01",
+      "comunes": 284,
+      "ccu": 51,
+      "vep": 0,
+      "total": 335
+    },
+    {
+      "fecha": "2016-04-01",
+      "comunes": 273,
+      "ccu": 64,
+      "vep": 0,
+      "total": 337
+    },
+    {
+      "fecha": "2016-05-01",
+      "comunes": 290,
+      "ccu": 45,
+      "vep": 0,
+      "total": 335
+    },
+    {
+      "fecha": "2016-06-01",
+      "comunes": 224,
+      "ccu": 41,
+      "vep": 0,
+      "total": 265
+    },
+    {
+      "fecha": "2016-07-01",
+      "comunes": 345,
+      "ccu": 47,
+      "vep": 0,
+      "total": 392
+    },
+    {
+      "fecha": "2016-08-01",
+      "comunes": 271,
+      "ccu": 64,
+      "vep": 0,
+      "total": 335
+    },
+    {
+      "fecha": "2016-09-01",
+      "comunes": 306,
+      "ccu": 66,
+      "vep": 0,
+      "total": 372
+    },
+    {
+      "fecha": "2016-10-01",
+      "comunes": 316,
+      "ccu": 75,
+      "vep": 0,
+      "total": 391
+    },
+    {
+      "fecha": "2016-11-01",
+      "comunes": 289,
+      "ccu": 83,
+      "vep": 0,
+      "total": 372
+    },
+    {
+      "fecha": "2016-12-01",
+      "comunes": 329,
+      "ccu": 59,
+      "vep": 0,
+      "total": 388
+    },
+    {
+      "fecha": "2017-01-01",
+      "comunes": 264,
+      "ccu": 51,
+      "vep": 0,
+      "total": 315
+    },
+    {
+      "fecha": "2017-02-01",
+      "comunes": 215,
+      "ccu": 38,
+      "vep": 0,
+      "total": 253
+    },
+    {
+      "fecha": "2017-03-01",
+      "comunes": 312,
+      "ccu": 70,
+      "vep": 0,
+      "total": 382
+    },
+    {
+      "fecha": "2017-04-01",
+      "comunes": 256,
+      "ccu": 65,
+      "vep": 0,
+      "total": 321
+    },
+    {
+      "fecha": "2017-05-01",
+      "comunes": 303,
+      "ccu": 98,
+      "vep": 0,
+      "total": 401
+    },
+    {
+      "fecha": "2017-06-01",
+      "comunes": 306,
+      "ccu": 77,
+      "vep": 0,
+      "total": 383
+    },
+    {
+      "fecha": "2017-07-01",
+      "comunes": 318,
+      "ccu": 77,
+      "vep": 0,
+      "total": 395
+    },
+    {
+      "fecha": "2017-08-01",
+      "comunes": 308,
+      "ccu": 96,
+      "vep": 0,
+      "total": 404
+    },
+    {
+      "fecha": "2017-09-01",
+      "comunes": 320,
+      "ccu": 91,
+      "vep": 0,
+      "total": 411
+    },
+    {
+      "fecha": "2017-10-01",
+      "comunes": 362,
+      "ccu": 102,
+      "vep": 0,
+      "total": 464
+    },
+    {
+      "fecha": "2017-11-01",
+      "comunes": 277,
+      "ccu": 87,
+      "vep": 0,
+      "total": 364
+    },
+    {
+      "fecha": "2017-12-01",
+      "comunes": 249,
+      "ccu": 93,
+      "vep": 0,
+      "total": 342
+    },
+    {
+      "fecha": "2018-01-01",
+      "comunes": 131,
+      "ccu": 161,
+      "vep": 0,
+      "total": 292
+    },
+    {
+      "fecha": "2018-02-01",
+      "comunes": 218,
+      "ccu": 58,
+      "vep": 0,
+      "total": 276
+    },
+    {
+      "fecha": "2018-03-01",
+      "comunes": 225,
+      "ccu": 55,
+      "vep": 0,
+      "total": 280
+    },
+    {
+      "fecha": "2018-04-01",
+      "comunes": 232,
+      "ccu": 83,
+      "vep": 27,
+      "total": 342
+    },
+    {
+      "fecha": "2018-05-01",
+      "comunes": 316,
+      "ccu": 115,
+      "vep": 117,
+      "total": 548
+    },
+    {
+      "fecha": "2018-06-01",
+      "comunes": 242,
+      "ccu": 96,
+      "vep": 165,
+      "total": 503
+    },
+    {
+      "fecha": "2018-07-01",
+      "comunes": 296,
+      "ccu": 92,
+      "vep": 122,
+      "total": 510
+    },
+    {
+      "fecha": "2018-08-01",
+      "comunes": 282,
+      "ccu": 102,
+      "vep": 168,
+      "total": 552
+    },
+    {
+      "fecha": "2018-09-01",
+      "comunes": 291,
+      "ccu": 106,
+      "vep": 148,
+      "total": 545
+    },
+    {
+      "fecha": "2018-10-01",
+      "comunes": 316,
+      "ccu": 109,
+      "vep": 167,
+      "total": 592
+    },
+    {
+      "fecha": "2018-11-01",
+      "comunes": 294,
+      "ccu": 69,
+      "vep": 118,
+      "total": 481
+    },
+    {
+      "fecha": "2018-12-01",
+      "comunes": 292,
+      "ccu": 69,
+      "vep": 88,
+      "total": 449
+    },
+    {
+      "fecha": "2019-01-01",
+      "comunes": 300,
+      "ccu": 45,
+      "vep": 92,
+      "total": 437
+    },
+    {
+      "fecha": "2019-02-01",
+      "comunes": 345,
+      "ccu": 45,
+      "vep": 85,
+      "total": 475
+    },
+    {
+      "fecha": "2019-03-01",
+      "comunes": 284,
+      "ccu": 32,
+      "vep": 86,
+      "total": 402
+    },
+    {
+      "fecha": "2019-04-01",
+      "comunes": 342,
+      "ccu": 30,
+      "vep": 93,
+      "total": 465
+    },
+    {
+      "fecha": "2019-05-01",
+      "comunes": 360,
+      "ccu": 37,
+      "vep": 93,
+      "total": 490
+    },
+    {
+      "fecha": "2019-06-01",
+      "comunes": 322,
+      "ccu": 32,
+      "vep": 108,
+      "total": 462
+    },
+    {
+      "fecha": "2019-07-01",
+      "comunes": 337,
+      "ccu": 43,
+      "vep": 91,
+      "total": 471
+    },
+    {
+      "fecha": "2019-08-01",
+      "comunes": 345,
+      "ccu": 41,
+      "vep": 118,
+      "total": 504
+    },
+    {
+      "fecha": "2019-09-01",
+      "comunes": 392,
+      "ccu": 47,
+      "vep": 120,
+      "total": 559
+    },
+    {
+      "fecha": "2019-10-01",
+      "comunes": 412,
+      "ccu": 48,
+      "vep": 131,
+      "total": 591
+    },
+    {
+      "fecha": "2019-11-01",
+      "comunes": 381,
+      "ccu": 43,
+      "vep": 108,
+      "total": 532
+    },
+    {
+      "fecha": "2019-12-01",
+      "comunes": 354,
+      "ccu": 44,
+      "vep": 126,
+      "total": 524
+    },
+    {
+      "fecha": "2020-01-01",
+      "comunes": 284,
+      "ccu": 19,
+      "vep": 107,
+      "total": 410
+    },
+    {
+      "fecha": "2020-02-01",
+      "comunes": 245,
+      "ccu": 23,
+      "vep": 123,
+      "total": 391
+    },
+    {
+      "fecha": "2020-03-01",
+      "comunes": 248,
+      "ccu": 21,
+      "vep": 130,
+      "total": 399
+    },
+    {
+      "fecha": "2020-04-01",
+      "comunes": 171,
+      "ccu": 5,
+      "vep": 29,
+      "total": 205
+    },
+    {
+      "fecha": "2020-05-01",
+      "comunes": 177,
+      "ccu": 17,
+      "vep": 75,
+      "total": 269
+    },
+    {
+      "fecha": "2020-06-01",
+      "comunes": 265,
+      "ccu": 24,
+      "vep": 154,
+      "total": 443
+    },
+    {
+      "fecha": "2020-07-01",
+      "comunes": 352,
+      "ccu": 36,
+      "vep": 162,
+      "total": 550
+    },
+    {
+      "fecha": "2020-08-01",
+      "comunes": 325,
+      "ccu": 44,
+      "vep": 197,
+      "total": 566
+    },
+    {
+      "fecha": "2020-09-01",
+      "comunes": 349,
+      "ccu": 42,
+      "vep": 185,
+      "total": 576
+    },
+    {
+      "fecha": "2020-10-01",
+      "comunes": 377,
+      "ccu": 36,
+      "vep": 205,
+      "total": 618
+    },
+    {
+      "fecha": "2020-11-01",
+      "comunes": 347,
+      "ccu": 57,
+      "vep": 161,
+      "total": 565
+    },
+    {
+      "fecha": "2020-12-01",
+      "comunes": 307,
+      "ccu": 53,
+      "vep": 144,
+      "total": 504
+    },
+    {
+      "fecha": "2021-01-01",
+      "comunes": 289,
+      "ccu": 21,
+      "vep": 126,
+      "total": 436
+    },
+    {
+      "fecha": "2021-02-01",
+      "comunes": 295,
+      "ccu": 31,
+      "vep": 131,
+      "total": 457
+    },
+    {
+      "fecha": "2021-03-01",
+      "comunes": 439,
+      "ccu": 55,
+      "vep": 233,
+      "total": 727
+    },
+    {
+      "fecha": "2021-04-01",
+      "comunes": 354,
+      "ccu": 35,
+      "vep": 230,
+      "total": 619
+    },
+    {
+      "fecha": "2021-05-01",
+      "comunes": 324,
+      "ccu": 53,
+      "vep": 201,
+      "total": 578
+    },
+    {
+      "fecha": "2021-06-01",
+      "comunes": 327,
+      "ccu": 47,
+      "vep": 219,
+      "total": 593
+    },
+    {
+      "fecha": "2021-07-01",
+      "comunes": 426,
+      "ccu": 47,
+      "vep": 205,
+      "total": 678
+    },
+    {
+      "fecha": "2021-08-01",
+      "comunes": 378,
+      "ccu": 42,
+      "vep": 280,
+      "total": 700
+    },
+    {
+      "fecha": "2021-09-01",
+      "comunes": 560,
+      "ccu": 47,
+      "vep": 258,
+      "total": 865
+    },
+    {
+      "fecha": "2021-10-01",
+      "comunes": 442,
+      "ccu": 51,
+      "vep": 296,
+      "total": 789
+    },
+    {
+      "fecha": "2021-11-01",
+      "comunes": 402,
+      "ccu": 70,
+      "vep": 295,
+      "total": 767
+    },
+    {
+      "fecha": "2021-12-01",
+      "comunes": 392,
+      "ccu": 60,
+      "vep": 260,
+      "total": 712
+    },
+    {
+      "fecha": "2022-01-01",
+      "comunes": 529,
+      "ccu": 38,
+      "vep": 203,
+      "total": 770
+    },
+    {
+      "fecha": "2022-02-01",
+      "comunes": 386,
+      "ccu": 71,
+      "vep": 160,
+      "total": 617
+    },
+    {
+      "fecha": "2022-03-01",
+      "comunes": 505,
+      "ccu": 48,
+      "vep": 274,
+      "total": 827
+    },
+    {
+      "fecha": "2022-04-01",
+      "comunes": 367,
+      "ccu": 54,
+      "vep": 210,
+      "total": 631
+    },
+    {
+      "fecha": "2022-05-01",
+      "comunes": 355,
+      "ccu": 58,
+      "vep": 214,
+      "total": 627
+    },
+    {
+      "fecha": "2022-06-01",
+      "comunes": 400,
+      "ccu": 77,
+      "vep": 242,
+      "total": 719
+    },
+    {
+      "fecha": "2022-07-01",
+      "comunes": 328,
+      "ccu": 78,
+      "vep": 225,
+      "total": 631
+    },
+    {
+      "fecha": "2022-08-01",
+      "comunes": 370,
+      "ccu": 91,
+      "vep": 276,
+      "total": 737
+    },
+    {
+      "fecha": "2022-09-01",
+      "comunes": 260,
+      "ccu": 88,
+      "vep": 244,
+      "total": 592
+    },
+    {
+      "fecha": "2022-10-01",
+      "comunes": 379,
+      "ccu": 117,
+      "vep": 268,
+      "total": 764
+    },
+    {
+      "fecha": "2022-11-01",
+      "comunes": 356,
+      "ccu": 120,
+      "vep": 279,
+      "total": 755
+    },
+    {
+      "fecha": "2022-12-01",
+      "comunes": 280,
+      "ccu": 104,
+      "vep": 226,
+      "total": 610
+    },
+    {
+      "fecha": "2023-01-01",
+      "comunes": 410,
+      "ccu": 82,
+      "vep": 177,
+      "total": 669
+    },
+    {
+      "fecha": "2023-02-01",
+      "comunes": 222,
+      "ccu": 70,
+      "vep": 141,
+      "total": 433
+    },
+    {
+      "fecha": "2023-03-01",
+      "comunes": 341,
+      "ccu": 112,
+      "vep": 213,
+      "total": 666
+    },
+    {
+      "fecha": "2023-04-01",
+      "comunes": 273,
+      "ccu": 82,
+      "vep": 201,
+      "total": 556
+    },
+    {
+      "fecha": "2023-05-01",
+      "comunes": 376,
+      "ccu": 108,
+      "vep": 278,
+      "total": 762
+    },
+    {
+      "fecha": "2023-06-01",
+      "comunes": 286,
+      "ccu": 91,
+      "vep": 208,
+      "total": 585
+    },
+    {
+      "fecha": "2023-07-01",
+      "comunes": 335,
+      "ccu": 92,
+      "vep": 213,
+      "total": 640
+    },
+    {
+      "fecha": "2023-08-01",
+      "comunes": 308,
+      "ccu": 103,
+      "vep": 243,
+      "total": 654
+    },
+    {
+      "fecha": "2023-09-01",
+      "comunes": 280,
+      "ccu": 90,
+      "vep": 193,
+      "total": 563
+    },
+    {
+      "fecha": "2023-10-01",
+      "comunes": 278,
+      "ccu": 90,
+      "vep": 211,
+      "total": 579
+    },
+    {
+      "fecha": "2023-11-01",
+      "comunes": 310,
+      "ccu": 77,
+      "vep": 206,
+      "total": 593
+    },
+    {
+      "fecha": "2023-12-01",
+      "comunes": 309,
+      "ccu": 75,
+      "vep": 178,
+      "total": 562
+    },
+    {
+      "fecha": "2024-01-01",
+      "comunes": 252,
+      "ccu": 78,
+      "vep": 211,
+      "total": 541
+    },
+    {
+      "fecha": "2024-02-01",
+      "comunes": 199,
+      "ccu": 46,
+      "vep": 132,
+      "total": 377
+    },
+    {
+      "fecha": "2024-03-01",
+      "comunes": 209,
+      "ccu": 53,
+      "vep": 178,
+      "total": 440
+    },
+    {
+      "fecha": "2024-04-01",
+      "comunes": 249,
+      "ccu": 59,
+      "vep": 195,
+      "total": 503
+    },
+    {
+      "fecha": "2024-05-01",
+      "comunes": 293,
+      "ccu": 71,
+      "vep": 238,
+      "total": 602
+    },
+    {
+      "fecha": "2024-06-01",
+      "comunes": 261,
+      "ccu": 64,
+      "vep": 222,
+      "total": 547
+    },
+    {
+      "fecha": "2024-07-01",
+      "comunes": 312,
+      "ccu": 78,
+      "vep": 248,
+      "total": 638
+    },
+    {
+      "fecha": "2024-08-01",
+      "comunes": 297,
+      "ccu": 97,
+      "vep": 334,
+      "total": 728
+    },
+    {
+      "fecha": "2024-09-01",
+      "comunes": 257,
+      "ccu": 77,
+      "vep": 377,
+      "total": 711
+    },
+    {
+      "fecha": "2024-10-01",
+      "comunes": 334,
+      "ccu": 94,
+      "vep": 535,
+      "total": 963
+    },
+    {
+      "fecha": "2024-11-01",
+      "comunes": 246,
+      "ccu": 83,
+      "vep": 435,
+      "total": 764
+    },
+    {
+      "fecha": "2024-12-01",
+      "comunes": 253,
+      "ccu": 86,
+      "vep": 433,
+      "total": 772
+    },
+    {
+      "fecha": "2025-01-01",
+      "comunes": 260,
+      "ccu": 74,
+      "vep": 423,
+      "total": 757
+    },
+    {
+      "fecha": "2025-02-01",
+      "comunes": 229,
+      "ccu": 52,
+      "vep": 420,
+      "total": 701
+    },
+    {
+      "fecha": "2025-03-01",
+      "comunes": 194,
+      "ccu": 77,
+      "vep": 534,
+      "total": 805
+    },
+    {
+      "fecha": "2025-04-01",
+      "comunes": 261,
+      "ccu": 76,
+      "vep": 516,
+      "total": 853
+    },
+    {
+      "fecha": "2025-05-01",
+      "comunes": 253,
+      "ccu": 86,
+      "vep": 494,
+      "total": 833
+    },
+    {
+      "fecha": "2025-06-01",
+      "comunes": 251,
+      "ccu": 91,
+      "vep": 504,
+      "total": 846
+    },
+    {
+      "fecha": "2025-07-01",
+      "comunes": 252,
+      "ccu": 98,
+      "vep": 523,
+      "total": 873
+    },
+    {
+      "fecha": "2025-08-01",
+      "comunes": 294,
+      "ccu": 74,
+      "vep": 590,
+      "total": 958
+    },
+    {
+      "fecha": "2025-09-01",
+      "comunes": 245,
+      "ccu": 90,
+      "vep": 590,
+      "total": 925
+    },
+    {
+      "fecha": "2025-10-01",
+      "comunes": 298,
+      "ccu": 117,
+      "vep": 572,
+      "total": 987
+    },
+    {
+      "fecha": "2025-11-01",
+      "comunes": 257,
+      "ccu": 87,
+      "vep": 445,
+      "total": 789
+    },
+    {
+      "fecha": "2025-12-01",
+      "comunes": 262,
+      "ccu": 71,
+      "vep": 505,
+      "total": 838
+    },
+    {
+      "fecha": "2026-01-01",
+      "comunes": 216,
+      "ccu": 84,
+      "vep": 390,
+      "total": 690
+    },
+    {
+      "fecha": "2026-02-01",
+      "comunes": 199,
+      "ccu": 49,
+      "vep": 359,
+      "total": 607
+    },
+    {
+      "fecha": "2026-03-01",
+      "comunes": 233,
+      "ccu": 92,
+      "vep": 509,
+      "total": 834
+    },
+    {
+      "fecha": "2026-04-01",
+      "comunes": 233,
+      "ccu": 74,
+      "vep": 465,
+      "total": 772
+    },
+    {
+      "fecha": "2026-05-01",
+      "comunes": 256,
+      "ccu": 78,
+      "vep": 495,
+      "total": 829
+    },
+    {
+      "fecha": "2026-06-01",
+      "comunes": 252,
+      "ccu": 68,
+      "vep": 523,
+      "total": 843
+    }
+  ],
   "rendicion_vep_scit": [
     {
       "fecha": "2018-04-01",
@@ -2393,5 +3696,5 @@
       "entidad": "Macro"
     }
   ],
-  "last_updated": "2026-08-17T13:43:24Z"
+  "last_updated": "2026-08-17T14:33:48Z"
 }
